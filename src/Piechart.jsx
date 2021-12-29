@@ -36,13 +36,16 @@ const Piechart = (props) => {
 
 
     return (
-        <ReactFusioncharts
-            type="pie3d"
-            width="100%"
-            height="100%"
-            dataFormat="JSON"
-            dataSource={dataSource}
-        />
+        <div className="d-flex justify-content-center">
+            <ReactFusioncharts
+                type="pie3d"
+                width="60%"
+                height="60%"
+                dataFormat="JSON"
+                dataSource={dataSource}
+                className="piec"
+            />
+        </div>
     );
 }
 
