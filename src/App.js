@@ -11,14 +11,11 @@ const App = () => {
     setHashtag(event.target.value);
   };
 
-  const newHash = "#" - hashtag.toString();
   const [Data, setData] = useState();
 
   const getInfo = async () => {
-    console.log(hashtag.toString())
-    console.log(newHash);
     const response = await fetch(
-      `https://twitter-sa-api.herokuapp.com/?query=${newHash}`
+      `https://twitter-sa-api.herokuapp.com/?query=${hashtag}`
     );
     const resp = await response.json();
     setData(resp);
@@ -31,7 +28,7 @@ const App = () => {
         <input
           type="text"
           onChange={giveValue}
-          placeholder="#yourHashtagHere"
+          placeholder="example: bitcoin"
           className="hashtag"
         />
         <button onClick={getInfo} className="button">
